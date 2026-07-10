@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+
+	<title>Mizzle - Technology and Corporate Bootstrap Theme</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Technology and Corporate Bootstrap Theme">
+
+	<!-- Dark mode -->
+	<script>
+		const storedTheme = localStorage.getItem('theme')
+ 
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+		window.addEventListener('DOMContentLoaded', () => {
+		    var el = document.querySelector('.theme-icon-active');
+			if(el != 'undefined' && el != null) {
+				const showActiveTheme = theme => {
+				const activeThemeIcon = document.querySelector('.theme-icon-active use')
+				const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+				const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+				document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+					element.classList.remove('active')
+				})
+
+				btnToActive.classList.add('active')
+				activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+			}
+
+			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+				if (storedTheme !== 'light' || storedTheme !== 'dark') {
+					setTheme(getPreferredTheme())
+				}
+			})
+
+			showActiveTheme(getPreferredTheme())
+
+			document.querySelectorAll('[data-bs-theme-value]')
+				.forEach(toggle => {
+					toggle.addEventListener('click', () => {
+						const theme = toggle.getAttribute('data-bs-theme-value')
+						localStorage.setItem('theme', theme)
+						setTheme(theme)
+						showActiveTheme(theme)
+					})
+				})
+
+			}
+		})
+		
+	</script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/glightbox/css/glightbox.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/swiper/swiper-bundle.min.css">
+	
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style-rtl.css">
+
+</head>
+
+<body>
+
+<!-- Header START -->
+<header class="header-sticky header-absolute">
+	<!-- Nav START -->
+	<nav class="navbar navbar-expand-xl">
+		<div class="container">
+			<!-- Logo START -->
+			<a class="navbar-brand me-0" href="index.html">
+				<img class="light-mode-item navbar-brand-item" src="assets/images/toys nut/2.jpg" alt="logo">
+				<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
+			</a>
+			<!-- Logo END -->
+
+			<!-- Main navbar START -->
+			<div class="navbar-collapse collapse" id="navbarCollapse">
+				<ul class="navbar-nav navbar-nav-scroll dropdown-hover mx-auto">
+
+					<!-- Nav item -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle active" href="#" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">صفحه نخست</a>
+						<div class="dropdown-menu dropdown-menu-size-lg p-3">
+							<div class="row pt-2">
+								<!-- Image and button -->
+								<div class="col-sm-6">
+
+								<!-- CTA --
+							
+					<!-- Nav item -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">درباره ما</a>
+						<ul class="dropdown-menu">
+							<!-- Dropdown submenu -->
+							<li class="dropdown dropend">
+								<a class="nav-link dropdown-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Abارتباط با ما </a>
+								<ul class="dropdown-menu" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="about-v1.html">About v.1</a></li>
+									<li> <a class="dropdown-item" href="about-v2.html">About v.2</a></li>
+									<li> <a class="dropdown-item" href="about-v3.html">About v.3</a></li>
+									<li> <a class="dropdown-item" href="team.html">Team</a></li>
+									<li> <a class="dropdown-item" href="services-v1.html">Services v.1</a></li>
+									<li> <a class="dropdown-item" href="services-v2.html">Services v.2</a></li>
+									<li> <a class="dropdown-item" href="service-single.html">Service Single</a></li>
+									<li> <a class="dropdown-item" href="customer-stories.html">Customer Stories</a></li>
+									<li> <a class="dropdown-item" href="customer-story-single.html">Customer Story Single</a></li>
+									<li> <a class="dropdown-item" href="career.html">Career <span class="badge text-bg-primary ms-2">2 Job</span></a></li>
+									<li> <a class="dropdown-item" href="career-single.html">Career Single</a></li>
+								</ul>
+							</li>
+							
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown dropend">
+								<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#">SaaS Pages</a>
+								<ul class="dropdown-menu">
+									<li> <a class="dropdown-item" href="features.html">Features</a></li>
+									<li> <a class="dropdown-item" href="feature-single.html">Feature Single</a></li>
+									<li> <a class="dropdown-item" href="integrations.html">Integrations</a></li>
+									<li> <a class="dropdown-item" href="integration-single.html">Integration Single</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown dropend">
+								<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#">Shop</a>
+								<ul class="dropdown-menu">
+									<li> <a class="dropdown-item" href="shop-grid.html">Shop Grid</a></li>
+									<li> <a class="dropdown-item" href="shop-single.html">Shop Single</a></li>
+									<li> <a class="dropdown-item" href="shop-cart.html">Shop Cart</a></li>
+									<li> <a class="dropdown-item" href="shop-empty-cart.html">Shop Empty Cart</a></li>
+									<li> <a class="dropdown-item" href="shop-checkout.html">Shop Checkout</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown dropend">
+								<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#">Blog</a>
+								<ul class="dropdown-menu">
+									<li> <a class="dropdown-item" href="blog-grid.html">Blog Grid</a></li>
+									<li> <a class="dropdown-item" href="blog-list-sidebar.html">Blog List Sidebar</a></li>
+									<li> <a class="dropdown-item" href="blog-single-v1.html">Blog Single v.1</a></li>
+									<li> <a class="dropdown-item" href="blog-single-v2.html">Blog Single v.2</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown dropend">
+								<a class="nav-link dropdown-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Specialty Pages</a>
+								<ul class="dropdown-menu" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="help-center.html">Help Center</a></li>
+									<li> <a class="dropdown-item" href="help-center-detail.html">Help Center Detail</a></li>
+									<li> <a class="dropdown-item" href="pricing.html">Pricing</a></li>
+									<li> <a class="dropdown-item" href="faq.html">Faqs</a></li>
+									<li> <a class="dropdown-item" href="error-404.html">Error 404</a></li>
+									<li> <a class="dropdown-item" href="coming-soon.html">Coming Soon</a></li>
+									<li> <a class="dropdown-item" href="terms-and-condition.html">Terms &amp; Conditions</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown dropend">
+								<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#">Authentication</a>
+								<ul class="dropdown-menu" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="sign-up.html">Sign Up</a></li>
+									<li> <a class="dropdown-item" href="sign-in.html">Sign In</a></li>
+									<li> <a class="dropdown-item" href="forgot-password.html">Forgot Password</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown dropend">
+								<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#">Accounts</a>
+								<ul class="dropdown-menu" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="account-detail.html">Details</a></li>
+									<li> <a class="dropdown-item" href="account-security.html">Security</a></li>
+									<li> <a class="dropdown-item" href="account-notification.html">Notifications</a></li>
+									<li> <a class="dropdown-item" href="account-projects.html">My Projects</a></li>
+									<li> <a class="dropdown-item" href="account-payment-details.html">Payment Details</a></li>
+									<li> <a class="dropdown-item" href="account-order.html">Order History</a></li>
+									<li> <a class="dropdown-item" href="account-wishlist.html">Wishlist</a></li>
+									<li> <a class="dropdown-item" href="account-delete.html">Delete Profile</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown divider -->
+							<li> <hr class="dropdown-divider"></li>
+							
+							<!-- Dropdown Multilevel -->
+							<li class="dropdown dropend">
+								<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Dropdown levels</a>
+								<ul class="dropdown-menu">
+
+									<!-- dropdown submenu open right -->
+										<li class="dropdown dropend">
+											<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Dropdown (end)</a>
+											<ul class="dropdown-menu">
+												<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
+												<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
+											</ul>
+										</li>
+									<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
+
+									<!-- dropdown submenu open left -->
+									<li class="dropdown dropstart">
+										<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Dropdown (start)</a>
+										<ul class="dropdown-menu">
+											<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
+											<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
+										</ul>
+									</li>
+									<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+
+					<!-- Nav item -->
+					<li class="nav-item dropdown dropdown-fullwidth">
+						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
+						<div class="dropdown-menu py-0">
+							<div class="row p-2 p-sm-4">
+								<!-- Dropdown column item -->
+								<div class="col-md-6 col-xl-4 col-xxl-3">
+									<div class="d-md-flex gap-4 h-100">
+										<!-- Links -->
+										<ul class="list-unstyled w-100">
+											<li class="dropdown-header h6 mb-2">Useful links</li>
+											<li> <a class="dropdown-item" href="#"><i class="bi bi-file-text fa-fw me-2"></i>Guides</a> </li>
+											<li> <a class="dropdown-item" href="#"><i class="bi bi-chat-left fa-fw me-2"></i>Supports</a> </li>
+											<li> <a class="dropdown-item" href="#"><i class="bi bi-calendar3-week fa-fw me-2"></i>Community &amp; events</a> </li>
+											<li> <a class="dropdown-item" href="#"><i class="bi bi-blockquote-right fa-fw me-2"></i>Blogs</a> </li>
+											<li> <a class="dropdown-item" href="#"><i class="bi bi-lock fa-fw me-2"></i>Security</a> </li>
+											<li> <a class="dropdown-item" href="#"><i class="bi bi-star fa-fw me-2"></i>Tutorials</a> </li>
+											<li> <a class="dropdown-item" href="#"><i class="bi bi-question-circle fa-fw me-2"></i>Help center</a> </li>
+											<li> <a class="dropdown-item" href="#"><i class="bi bi-envelope fa-fw me-2"></i>Developer newsletter</a> </li>
+										</ul>
+										<!-- Divider line -->
+										<div class="vr ms-2 ms-auto d-none d-md-block"></div>
+									</div>
+								</div>
+
+								<!-- Dropdown column item -->
+								<div class="col-md-6 col-xl-4 col-xxl-5 h-100">
+									<span class="dropdown-header h6 mb-2">Key features</span>
+
+									<!-- Dropdown item -->
+									<div class="dropdown-item bg-light-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3">
+										<div class="d-flex me-3">
+											<!-- Icon -->
+											<div class="icon-md border bg-body rounded flex-shrink-0"><i class="bi-file-earmark-text heading-color fs-6"></i></div>
+											<!-- Content -->
+											<div class="mx-2">
+												<p class="stretched-link heading-color fw-bold mb-0">Documentation</p>
+												<p class="mb-0 text-body small">Using documentation you can easily develop projects</p>
+											</div>
+										</div>
+										<!-- Button -->
+										<a class="icon-link icon-link-hover text-primary-hover stretched-link" href="docs/index.html" target="_blank"><i class="bi bi-chevron-right"></i> </a>
+									</div>
+
+									<!-- Dropdown item -->
+									<div class="dropdown-item bg-light-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3">
+										<div class="d-flex me-3">
+											<!-- Icon -->
+											<div class="icon-md border bg-body rounded flex-shrink-0"><i class="bi bi-stickies heading-color fs-6"></i></div>
+											<!-- Content -->
+											<div class="mx-2">
+												<p class="stretched-link heading-color fw-bold mb-0">Snippets</p>
+												<p class="mb-0 text-body small">Development guides for building projects with Mizzle</p>
+											</div>
+										</div>
+										<!-- Button -->
+										<a class="icon-link icon-link-hover text-primary-hover stretched-link" href="#"><i class="bi bi-chevron-right"></i> </a>
+									</div>
+
+									<!-- Dropdown item -->
+									<div class="dropdown-item bg-light-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3">
+										<div class="d-flex me-3">
+											<!-- Icon -->
+											<div class="icon-md border bg-body rounded flex-shrink-0"><i class="bi bi-bullseye heading-color fs-6"></i></div>
+											<!-- Content -->
+											<div class="mx-2">
+												<p class="stretched-link heading-color fw-bold mb-0">Changelog</p>
+												<p class="mb-0 text-body small">Recent feature release and announcement. See how changes are made.</p>
+											</div>
+										</div>
+										<!-- Button -->
+										<a class="icon-link icon-link-hover text-primary-hover stretched-link" href="docs/changelog.html" target="_blank"><i class="bi bi-box-arrow-up-right"></i> </a>
+									</div>
+
+									<!-- Dropdown item -->
+									<div class="dropdown-item bg-light-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3">
+										<div class="d-flex me-3">
+											<!-- Icon -->
+											<div class="icon-md border bg-body rounded flex-shrink-0"><i class="bi bi-mask heading-color fs-6"></i></div>
+											<!-- Content -->
+											<div class="mx-2">
+												<a class="stretched-link heading-color fw-bold mb-0" href="#">Playwright tips</a>
+												<p class="mb-0 text-body small">Tips and In-depth guide for headless browser automation</p>
+											</div>
+										</div>
+										<!-- Button -->
+										<a class="icon-link icon-link-hover text-primary-hover stretched-link" href="#"><i class="bi bi-chevron-right"></i> </a>
+									</div>
+								</div>
+
+								<!-- Feature resources card -->
+								<div class="col-lg-4">
+									<span class="dropdown-header h6 mb-2">Feature resources</span>
+
+									<!-- Feature card -->
+									<div class="card bg-transparent px-3">
+										<!-- Image -->
+										<img src="assets/images/blog/02.jpg" class="rounded mb-3" alt="feature-img">
+										<div class="card-body p-0">
+											<h6><a href="#">Featured title here</a></h6>
+											<p class="mb-2">Departure defective arranging rapturous did believe him all had supported.</p>
+											<a class="icon-link icon-link-hover stretched-link z-index-2" href="#">Check it out<i class="bi bi-arrow-right"></i> </a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<!-- Nav item -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portfolio</a>
+							<div class="dropdown-menu dropdown-menu-center dropdown-menu-size-xl p-3">
+								<div class="row g-xl-3">
+									<!-- Work -->
+									<div class="col-xl-8 d-none d-xl-block">
+										<div class="d-flex gap-4">
+											<!-- Card -->
+											<div class="card bg-transparent">
+												<!-- Image -->
+												<img src="assets/images/portfolio/list/01.jpg" class="card-img" alt="">
+												<!-- Card body -->
+												<div class="card-body px-0 text-start pb-0">
+													<h6><a href="#">Ceremony Worthy of Time</a></h6>
+													<p class="mb-2 small">We help our customers better manage their web presence.</p>
+													<a class="icon-link icon-link-hover stretched-link mb-0" href="portfolio-case-studies-v1.html">Learn more<i class="bi bi-arrow-right"></i> </a>
+												</div>
+											</div>
+
+											<!-- Card -->
+											<div class="card bg-transparent">
+												<!-- Image -->
+												<img src="assets/images/portfolio/list/02.jpg" class="card-img" alt="">
+												<!-- Card body -->
+												<div class="card-body px-0 text-start pb-0">
+													<h6><a href="#">Brushstrokes and Beyond</a></h6>
+													<p class="mb-2 small">We help our customers better manage their web presence.</p>
+													<a class="icon-link icon-link-hover stretched-link mb-0" href="portfolio-case-studies-v2.html">Learn more<i class="bi bi-arrow-right"></i> </a>
+												</div>
+											</div>
+
+											<!-- Divider line -->
+											<div class="vr ms-2"></div>
+										</div>
+									</div>
+
+									<!-- Index nav links -->
+									<div class="col-xl-4">
+										<ul class="list-unstyled">
+											<li class="dropdown-header h6">Portfolio Pages</li>
+											<li> <a class="dropdown-item" href="portfolio-masonry.html">Portfolio Masonry</a> </li>
+											<li> <a class="dropdown-item" href="portfolio-showcase.html">Portfolio Showcase</a> </li>
+											<li> <a class="dropdown-item" href="portfolio-list.html">Portfolio List</a> </li>
+											<li> <a class="dropdown-item" href="portfolio-case-studies-v1.html">Portfolio Case Study v.1</a> </li>
+											<li> <a class="dropdown-item" href="portfolio-case-studies-v2.html">Portfolio Case Study v.2</a> </li>
+										</ul>
+									</div>
+								</div>
+							</div>
+					</li>
+
+					<!-- Nav item -->
+					<li class="nav-item"> <a class="nav-link" href="contact-v1.html">ارتباط با ما </a> </li>
+				</ul>
+			</div>
+			<!-- Main navbar END -->
+
+			<!-- Buttons -->
+			<ul class="nav align-items-center dropdown-hover ms-sm-2">
+				<!-- Dark mode option START -->
+				<li class="nav-item dropdown dropdown-animation">
+					<button class="btn btn-link text-warning mb-0 px-2 lh-1" id="bs-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-circle-half theme-icon-active fill-mode fa-fw" viewBox="0 0 16 16">
+						<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+						<use href="#"></use>
+					</svg>
+					</button>
+
+					<ul class="dropdown-menu min-w-auto dropdown-menu-lg-end" aria-labelledby="bs-theme">
+						<li class="mb-1">
+							<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+								<svg width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
+									<path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+									<use href="#"></use>
+								</svg>روز
+							</button>
+						</li>
+						<li class="mb-1">
+							<button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="dark">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
+									<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+									<path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+									<use href="#"></use>
+								</svg>شب
+							</button>
+						</li>
+						<li>
+							<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half fa-fw mode-switch me-1" viewBox="0 0 16 16">
+									<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+									<use href="#"></use>
+								</svg>Auto
+							</button>
+						</li>
+					</ul>
+				</li>
+				<!-- Dark mode option END -->
+
+				<!-- Sign up button -->
+				<li class="nav-item me-2">
+					<a href="sign-up.html" class="btn btn-sm btn-light mb-0"><i class="bi bi-person-circle me-1"></i>ورود&nbsp;</a>
+				</li>
+
+				<!-- Buy now button -->
+				<li class="nav-item d-none d-sm-block">
+					<button class="btn btn-sm btn-primary mb-0">عضویت&nbsp;</button>
+				</li>
+				
+				<!-- Responsive navbar toggler -->
+				<li class="nav-item">
+					<button class="navbar-toggler ms-sm-3 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-animation">
+							<span></span>
+							<span></span>
+							<span></span>
+						</span>
+					</button>
+				</li>	
+			</ul>
+
+		</div>
+	</nav>
+	<!-- Nav END -->
+</header>
+<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main Banner START -->
+<section class="pt-xl-8 pb-0 position-relative">
+	<div class="container py-5 position-relative">
+		<!-- Title and contents -->
+		<div class="inner-container mx-auto text-center">
+			<!-- Title -->
+			<h3 class="mb-4">مغز گردوی ممتاز
+			  <!-- Decoration -->
+			  <svg width="76" height="51" viewBox="0 0 76 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+			    <mask id="path-1-inside-1_3060_294" fill="white">
+			      <path d="M25.5 51C18.737 51 12.251 48.3134 7.46878 43.5312C2.6866 38.749 -1.88135e-07 32.263 0 25.5C1.88135e-07 18.737 2.6866 12.251 7.46878 7.46878C12.251 2.6866 18.737 -8.06482e-08 25.5 0L25.5 25.5L25.5 51Z"></path>
+		        </mask>
+			    <path d="M25.5 51C18.737 51 12.251 48.3134 7.46878 43.5312C2.6866 38.749 -1.88135e-07 32.263 0 25.5C1.88135e-07 18.737 2.6866 12.251 7.46878 7.46878C12.251 2.6866 18.737 -8.06482e-08 25.5 0L25.5 25.5L25.5 51Z" fill="white" stroke="#202124" stroke-width="4" mask="url(#path-1-inside-1_3060_294)"></path>
+			    <path d="M50.5 51C43.737 51 37.251 48.3134 32.4688 43.5312C27.6866 38.749 25 32.263 25 25.5C25 18.737 27.6866 12.251 32.4688 7.46878C37.251 2.6866 43.737 -8.06482e-08 50.5 0L50.5 25.5L50.5 51Z" fill="#202124"></path>
+			    <path d="M75.5 51C68.737 51 62.251 48.3134 57.4688 43.5312C52.6866 38.749 50 32.263 50 25.5C50 18.737 52.6866 12.251 57.4688 7.46878C62.251 2.6866 68.737 -8.06482e-08 75.5 0V25.5L75.5 51Z" fill="#09B850"></path>
+		      </svg>
+			  بلانچ شده </h3>
+<p class="mb-5">در TOYSNUT با تکیه بر دانش فنی، فرآوری نوین و انتخاب بهترین گردوهای ایرانی، مغز گردوی بلانچ‌شده‌ای با رنگ روشن، طعم طبیعی و کیفیت یکنواخت تولید می‌کنیم. محصولات ما با رعایت استانداردهای بهداشتی و بسته‌بندی حرفه‌ای، آماده عرضه به صنایع غذایی، عمده‌فروشان و بازارهای صادراتی هستند. تعهد ما ارائه محصولی سالم، باکیفیت و قابل اعتماد است تا مشتریان در هر نقطه از جهان، اصالت و کیفیت گردوی ایران را تجربه کنند. TOYSNUT؛ کیفیتی که اعتماد می‌آفریند، طعمی که ماندگار می‌ماند.</p>
+
+			<!-- Button -->
+			<div class="d-flex gap-1 gap-sm-3 flex-wrap justify-content-center mb-6"> </div>
+
+			<!-- Rating start -->		</div>
+
+		<!-- Main image -->
+		<div class="row mt-7">
+			<div class="col-md-10 mx-auto">
+				<img src="assets/images/toys nut/1.jpg" alt="">
+			</div>
+		</div>
+		
+	</div>
+</section>
+<!-- =======================
+Main Banner END -->
+
+<!-- =======================
+Service START -->
+<Section class="pb-0">
+	<div class="container">
+		<!-- Title -->
+		<div class="row align-items-center mb-4 mb-md-6">
+			<div class="col-md-6 mb-3 mb-md-0">
+			  <h5 class="mb-0">مجموعه ای</h5>
+            </div>
+
+			<div class="col-md-4 ms-auto text-md-end">
+				<a href="#" class="btn btn-dark mb-0">محصولات&nbsp;</a>
+			</div>
+		</div>
+
+		<!-- Service box START -->
+		<div class="swiper" data-swiper-options='{
+			"loop": false,
+			"spaceBetween": 30,
+			"pagination":{
+				"el":".swiper-pagination"
+			},
+			"breakpoints": {
+				"576": {"slidesPerView": 1}, 
+				"768": {"slidesPerView": 2}, 
+				"992": {"slidesPerView": 3}
+			}}'>
+
+			<!-- Slider items -->
+			<div class="swiper-wrapper">
+
+				<div class="swiper-slide">
+					<div class="card bg-primary p-5 mt-lg-7">
+						<!-- Card header -->
+						<div class="card-header bg-transparent d-flex justify-content-between p-0 pb-6">
+							<h6 class="me-4 mb-0"><a href="#" class="stretched-link heading-color">صادرات<strong> و بازار جهانی گردو</strong></a></h6>
+							<!-- Button -->
+							<a href="#" class="btn btn-round btn-light border flex-shrink-0"><i class="bi bi-arrow-up-right"></i></a>
+						</div>
+
+						<!-- Card body -->
+						<div class="card-body p-0">
+
+							<!-- Icon -->
+							<figure class="heading-color mb-5">
+								<svg width="79" height="90" viewBox="0 0 79 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M78.3117 35.252L62.0851 26.4733C61.7532 26.2904 61.3476 26.2904 61.0341 26.4733L56.7562 28.7777V9.88519C56.7562 9.48283 56.5349 9.11705 56.1846 8.91587L39.958 0.137167C39.6261 -0.0457224 39.2204 -0.0457224 38.9069 0.137167L22.6803 8.91587C22.33 9.11705 22.1087 9.48283 22.1087 9.88519V28.7777L17.8492 26.4733C17.5173 26.2904 17.1117 26.2904 16.7982 26.4733L0.571618 35.252C0.221271 35.4532 0 35.8189 0 36.2213V68.4099C0 68.8122 0.221271 69.178 0.571618 69.3792L16.7982 78.1579C17.1301 78.3408 17.5358 78.3408 17.8492 78.1579L22.1087 75.8535V80.1148C22.1087 80.5172 22.33 80.883 22.6803 81.0841L38.9069 89.8628C39.2388 90.0457 39.6445 90.0457 39.958 89.8628L56.1846 81.0841C56.5349 80.883 56.7562 80.5172 56.7562 80.1148V75.8535L61.0157 78.1579C61.3476 78.3408 61.7532 78.3408 62.0667 78.1579L78.2933 69.3792C78.6436 69.178 78.8649 68.8122 78.8649 68.4099V36.2213C78.8833 35.8189 78.6621 35.4532 78.3117 35.252ZM61.5504 28.6862L75.4721 36.2213L61.5504 43.7564L47.6287 36.2213L61.5504 28.6862ZM39.4232 65.7031L25.5016 58.1681L39.4232 50.633L53.3449 58.1681L39.4232 65.7031ZM34.629 36.2213C34.629 35.8189 34.4077 35.4532 34.0574 35.252L24.303 29.9848V11.7324L38.3169 19.3223V48.7492L34.629 50.7427V36.2213ZM54.5435 29.9848L44.7891 35.252C44.4387 35.4532 44.2175 35.8189 44.2175 36.2213V50.7244L40.5296 48.7309V19.3223L54.5435 11.7324V29.9848ZM56.1846 57.1987L46.4302 51.9315V38.0685L60.444 45.6584V75.3414L56.7562 73.3479V58.1681C56.7562 57.7657 56.5349 57.3999 56.1846 57.1987ZM39.4232 2.35013L53.3449 9.88519L39.4232 17.4202L25.5016 9.88519L39.4232 2.35013ZM17.2961 28.6862L31.2177 36.2213L17.2961 43.7564L3.37439 36.2213L17.2961 28.6862ZM2.17584 38.0685L16.1897 45.6584V75.3414L2.17584 67.7515V38.0685ZM18.4024 75.3414V45.6584L32.4163 38.0685V51.9315L22.6619 57.1987C22.3116 57.3999 22.0903 57.7657 22.0903 58.1681V73.3479L18.4024 75.3414ZM24.303 73.988V60.0152L38.3169 67.6052V87.0463L24.303 79.4564V73.988ZM54.5435 79.4564L40.5296 87.0463V67.6052L54.5435 60.0152V73.988V79.4564ZM62.6568 75.3414V45.6584L76.6706 38.0685V67.7515L62.6568 75.3414Z" fill="currentColor"/>
+							  </svg>
+									
+							</figure>
+
+							<!-- Title and desc -->
+							<span class="text-white">[جایگاه گردوی ایرانی]:</span>
+							<p class="fw-semibold heading-color mb-0 mt-2">گردوی ایران، به‌ویژه گردوی تویسرکان، به دلیل کیفیت ممتاز، طعم بی‌نظیر و ارزش غذایی بالا، از جایگاه ویژه‌ای در بازارهای جهانی برخوردار است. فرآوری اصولی،   .</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="swiper-slide">
+					<div class="card bg-dark p-5 mt-lg-4" data-bs-theme="dark">
+						<!-- Card header -->
+						<div class="card-header bg-transparent d-flex justify-content-between p-0 pb-6">
+							<h6 class="me-4 mb-0"><a href="#">کیفیت،سلامت و ارزش غذایی</a></h6>
+							<!-- Button -->
+							<a href="#" class="btn btn-round btn-light border flex-shrink-0"><i class="bi bi-arrow-up-right"></i></a>
+						</div>
+
+						<!-- Card body -->
+						<div class="card-body p-0">
+
+							<!-- Icon -->
+							<figure class="heading-color mb-5">
+								<svg width="74" height="90" viewBox="0 0 74 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M36.582 90C36.3791 90 36.1898 89.942 36.0297 89.8412L0.501132 68.337C0.190185 68.1489 0 67.8116 0 67.448C0 67.448 0 58.0947 0 58.0855C0.00332564 57.722 0.203487 57.3791 0.516721 57.1961L5.98635 53.8859L0.500925 50.5657C0.190186 50.3776 0 50.0402 0 49.6767C0 49.6767 0 40.3233 0 40.3142C0.00332564 39.9511 0.203695 39.6073 0.516721 39.4248L5.98614 36.1143L0.501132 32.7945C0.190185 32.6062 0 32.2691 0 31.9053C0 31.9053 0 22.552 0 22.5428C0.00332564 22.1703 0.216582 21.828 0.516928 21.6534L36.0439 0.150277C36.3748 -0.0500924 36.7892 -0.0500924 37.1201 0.150277C37.1201 0.150277 72.5965 21.6229 72.6473 21.6534C72.9651 21.8459 73.1609 22.1797 73.164 22.552V31.9053C73.164 32.2691 72.974 32.6062 72.6628 32.7943L67.1778 36.1143C67.1778 36.1143 72.6429 39.4225 72.647 39.425C72.9538 39.6106 73.1606 39.9482 73.1638 40.3235V49.6769C73.1638 50.0404 72.9738 50.3778 72.6626 50.5659L67.1774 53.8859C67.1774 53.8859 72.6441 57.1947 72.6466 57.1961C72.9534 57.3818 73.1606 57.7164 73.1638 58.0949V67.4482C73.1638 67.8118 72.9738 68.1491 72.6626 68.3372L37.1343 89.8412C36.9742 89.942 36.7851 90 36.582 90ZM37.6212 80.1931V87.1169L71.0854 66.8623V59.9385L37.6212 80.1931ZM2.07852 66.8623L35.5427 87.1169V80.1931L2.07852 59.9385V66.8623ZM3.04649 58.0947L36.582 78.3925L70.1177 58.0947L65.1706 55.1006L37.1343 72.07C36.9742 72.1706 36.7851 72.2286 36.582 72.2286C36.3791 72.2286 36.1898 72.1706 36.0297 72.0698L7.99358 55.1006L3.04649 58.0947ZM37.6212 62.4218V69.3455L71.0854 49.0909V42.1672L37.6212 62.4218ZM2.07852 49.0909L35.5427 69.3455V62.4218L2.07852 42.1672V49.0909ZM3.04628 40.3233L36.582 60.6211L70.1177 40.3233L65.1708 37.329L37.1343 54.2985C36.974 54.3991 36.7848 54.4573 36.582 54.4573C36.3791 54.4573 36.1898 54.3993 36.0297 54.2985L7.99296 37.329L3.04628 40.3233ZM37.6212 44.6504V51.5742L71.0854 31.3196V24.3958L37.6212 44.6504ZM2.07852 31.3196L35.5427 51.5742V44.6504L2.07852 24.3958V31.3196ZM3.04628 22.552L36.582 42.8498L70.1177 22.552L36.582 2.25416L3.04628 22.552Z" fill="currentColor"/>
+								</svg>
+							</figure>
+
+							<!-- Title and desc -->
+							<span>مقاله های علمی و آموزشی :</span>
+							<p class="fw-semibold heading-color mb-0 mt-2">
+								
+								خواص مغز گردو برای سلامت قلب و مغز 
+							ارزش غذایی مغز گردو بلانچ شده 
+							تفاوت مغز گردو ی تازه و بلانچ
+							آنتی اکسیدانها و اسیدهای چرب امگا 3
+							
+							</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="swiper-slide">
+					<div class="card bg-light border p-5">
+						<!-- Card header -->
+						<div class="card-header bg-transparent d-flex justify-content-between p-0 pb-6">
+							<h6 class="me-4 mb-0"><a href="#" class="stretched-link">فناوری بلانچ و فرآوری&nbsp; گردو</a></h6>
+							<!-- Button -->
+							<a href="#" class="btn btn-round btn-white border flex-shrink-0"><i class="bi bi-arrow-up-right"></i></a>
+						</div>
+
+						<!-- Card body -->
+					  <div class="card-body p-0">
+							<!-- Icon -->
+						<figure class="heading-color mb-5">
+								<svg width="82" height="91" viewBox="0 0 82 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M0.894531 65.0129C0.894523 65.2227 0.948005 65.4291 1.04993 65.6126C1.15185 65.796 1.29885 65.9505 1.47705 66.0613L40.453 90.313C40.6524 90.4373 41.4679 90.6552 41.8211 90.3106L80.4581 66.0589C80.6352 65.9478 80.7811 65.7935 80.8823 65.6105C80.9835 65.4276 81.0366 65.2219 81.0366 65.0129C81.0366 65.0129 81.0334 25.8976 81.0331 25.8856C81.0413 25.6708 80.9918 25.4577 80.8899 25.2684C80.7879 25.0791 80.6372 24.9205 80.4533 24.8091L41.6173 0.682433C41.4217 0.560647 41.196 0.496094 40.9656 0.496094C40.7352 0.496094 40.5095 0.560647 40.3139 0.682433L1.47787 24.8092C1.29278 24.9193 1.14107 25.0776 1.03895 25.2672C0.936835 25.4568 0.88814 25.6705 0.898072 25.8857C0.897742 25.8976 0.894531 65.0129 0.894531 65.0129ZM59.1999 58.2046L41.0757 69.4641L22.9514 58.2046L41.0757 46.9451L59.1999 58.2046ZM39.9145 44.7586L21.8461 55.9836V38.1889L39.9145 26.8151V44.7586ZM60.3054 38.1922V55.9836L42.4156 44.8697V27.0275L60.3054 38.1922ZM3.36457 28.0789L19.2641 37.9566V58.0645C19.2588 58.3076 19.321 58.5473 19.4438 58.7572C19.5665 58.967 19.745 59.1387 19.9594 59.2533L39.8705 71.6231V87.0413L3.36457 64.3268V28.0789ZM42.3995 87.0313V71.5791L62.1919 59.2536C62.402 59.1535 62.573 58.9868 62.6785 58.7794C62.784 58.5721 62.818 58.3357 62.7753 58.107V37.8891L78.5664 28.0789V64.3297L42.3995 87.0313ZM77.4612 25.858L61.303 35.8962L42.2878 24.0194C41.964 23.8172 41.5903 23.709 41.2085 23.7069C40.8267 23.7048 40.4518 23.809 40.1258 24.0078L20.6277 35.8961L4.46955 25.8579L40.9656 3.18545L77.4612 25.858Z" fill="currentColor"/>
+								</svg>
+					    </figure>
+
+						  <!-- Title and desc -->
+						  <span>بلانچ مغز گردو چیست :</span>
+						  <p class="fw-semibold heading-color mb-0 mt-2">مغز گردو بلانچ شده، محصولی فرآوری‌شده با ظاهری روشن، رنگی یکنواخت و کیفیتی ممتاز است که طی فرآیند بلانچ، پوسته نازک قهوه‌ای   .</p>
+					  </div>
+					</div>
+				</div>
+			
+			</div>
+
+			<!-- Slider Pagination -->
+			<div class="swiper-pagination swiper-pagination-primary position-relative mt-4"></div>
+		</div>
+		<!-- Service box END -->
+	</div>
+</Section>
+<!-- =======================
+Service END -->
+
+<!-- =======================
+About us START -->
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-11 mx-auto">
+				<div class="row align-items-center">
+					<!-- Image -->
+					<div class="col-md-6 col-lg-5 mb-4 mb-md-0">
+						<img src="assets/images/toys nut/03.jpg" class="rounded" alt="">
+					</div>
+					<!-- Content -->
+					<div class="col-md-6 ms-auto">
+						<h4 class="mb-md-4">تفاوت مغز گردوی بلانچ‌شده با مغز گردوی معمولی</h4>
+<p class="mb-md-4">مغز گردوی بلانچ‌شده محصولی است که پس از یک فرآیند تخصصی، پوست نازک و قهوه‌ای روی مغز آن به‌صورت کنترل‌شده جدا می‌شود. این فرآیند باعث می‌شود مغز گردو ظاهری روشن‌تر، یکنواخت‌تر و جذاب‌تر پیدا کند، در حالی که طعم طبیعی و ارزش غذایی آن حفظ می‌شود. در مقابل، مغز گردوی بلانچ‌نشده همچنان دارای پوست نازک روی سطح خود است که ممکن است در برخی ارقام طعم تلخی یا گسی ایجاد کند و ظاهر محصول را برای برخی کاربردها، به‌ویژه در صنایع غذایی، کمتر مطلوب سازد.</p>
+						<p class="mb-md-4">مزایای مغز گردوی بلانچ‌شده رنگ روشن و یکنواخت با ظاهری لوکس و جذاب کاهش طعم تلخی ناشی از پوست نازک آماده مصرف و مناسب برای استفاده مستقیم ایده‌آل برای شیرینی‌پزی، شکلات، بستنی، نان، دسر و صنایع غذایی مناسب برای بسته‌بندی‌های ممتاز و بازارهای صادراتی افزایش ارزش افزوده و جذابیت محصول برای مصرف‌کننده</p>
+						<div class="text-center d-inline-block bg-dark rounded px-5 py-3">
+						<span class="text-white">بیشتر بدانید</span> &nbsp; &nbsp; &nbsp; &nbsp; </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+About us END -->
+
+<!-- =======================
+Testimonial and counter START --><!-- =======================
+Testimonial and counter END -->
+
+<!-- =======================
+Case studies START -->
+<section class="bg-light pb-0">
+	<div class="container">
+		<!-- Title -->
+		<div class="inner-container-small mx-auto">
+			<!-- Title -->
+			<div class="text-center mb-6">
+				<h2 class="mb-">محصولات تویس نات</h2>
+				<p class="mb-0">از انتخاب بهترین گردو تا فرآوری تخصصی و بسته‌بندی استاندارد، هر مرحله با دقت انجام می‌شود تا محصولی شایسته اعتماد مشتریان و بازارهای جهانی ارائه شود.</p>
+		  </div>
+		</div>
+		
+		<!-- Projects -->
+	  <div class="row g-4 g-lg-5 justify-content-center">
+			<!-- Card item -->
+			<div class="col-md-6 col-lg-4">
+				<div class="card card-img-scale card-element-hover overflow-hidden">
+					<!-- Card image -->
+					<div class="card-img-scale-wrapper">
+						<!-- Hover elements -->
+						<div class="card-img-overlay hover-element d-flex align-items-center justify-content-center">
+							<!-- Client image -->
+							
+							<!-- BG overlay -->
+						  <div class="bg-overlay bg-dark opacity-7"></div>
+					  </div>
+						<!-- Case studie image -->
+						<img src="assets/images/portfolio/list/02.jpg" class="img-scale card-img-top" alt="portfolio-img">
+					</div>
+
+				  <div class="card-body">
+					<h6 class="card-title mb-2">مغز گردو بلانچ شده</h6>
+						<p class="card-text mb-3">&nbsp;کره گردو از ۱۰۰٪ مغز گردوی خالص تهیه می‌شود و بدون افزودنی، رنگ مصنوعی یا نگهدارنده است. بافتی نرم، طعمی طبیعی و ارزش غذایی بالا دارد و انتخابی مناسب برای صبحانه، میان‌وعده، ورزشکاران و استفاده در انواع دسر و شیرینی است.</p>
+						<!-- Badge list -->
+					<div class="hstack flex-wrap gap-2 mb-4">
+							<div class="badge border heading-color bg-light">ارباط با واحد فروش</div>
+							<div class="badge border heading-color bg-light">ثبت سفارش</div>
+							<div class="badge border heading-color bg-light">بیشتر بدانید&nbsp;</div>
+				    </div>
+					  <!-- Button -->
+				  </div>
+				</div>
+			</div>
+
+			<!-- Card item -->
+			<div class="col-md-6 col-lg-4">
+				<div class="card card-img-scale card-element-hover overflow-hidden">
+					<!-- Card image -->
+					<div class="card-img-scale-wrapper">
+						<!-- Hover elements -->
+						<div class="card-img-overlay hover-element d-flex align-items-center justify-content-center">
+							<!-- Client image -->
+							
+							<!-- BG overlay -->
+						  <div class="bg-overlay bg-dark opacity-7"></div>
+					  </div>
+						<!-- Case studie image -->
+					  <img src="assets/images/portfolio/list/01.jpg" class="img-scale card-img-top" alt="portfolio-img">
+					</div>
+
+					<div class="card-body">
+					  <h6 class="card-title mb-2">مغز گردو ایرانی</h6>
+						<p class="card-text mb-3">مغز گردوی باکیفیت با طعم طبیعی، عطر دلپذیر و ارزش غذایی بالا، حاصل انتخاب دقیق بهترین گردوهاست. این محصول سرشار از چربی‌های مفید، پروتئین، فیبر، آنتی‌اکسیدان و امگا ۳ بوده و برای مصرف روزانه، شیرینی‌پزی، آشپزی و صنایع غذایی گزینه‌ای ایده‌آل</p>
+						<!-- Badge list -->
+						<div class="hstack flex-wrap gap-2 mb-4">
+							<div class="badge border heading-color bg-light">ثبت سفارش</div>
+							<div class="badge border heading-color bg-light">بیشتر بدانید</div>
+					  </div>
+						<!-- Button -->
+				  </div>
+				</div>
+			</div>
+
+			<!-- Card item -->
+		<div class="col-md-6 col-lg-4">
+		  <div class="card card-img-scale card-element-hover overflow-hidden">
+					<!-- Card image -->
+					<div class="card-img-scale-wrapper">
+						<!-- Hover elements -->
+						
+						<!-- Case studie image -->
+						<img src="assets/images/portfolio/list/03.jpg" class="img-scale card-img-top" alt="portfolio-img">
+					</div>
+
+			<div class="card-body">
+			  <h6 class="card-title mb-2">مغز گردو بلانچ شده چیست؟&nbsp;</h6>
+						<p class="card-text mb-3">مغز گردو بلانچ شده، با حذف پوست نازک روی مغز و حفظ کیفیت طبیعی، ظاهری روشن، طعمی ملایم و بافتی مطلوب دارد. این محصول گزینه‌ای ایده‌آل برای صنایع غذایی، قنادی، شکلات‌سازی، تولید کره گردو و صادرات است و با بسته‌بندی بهداشتی، تازگی و</p>
+						<!-- Badge list -->
+						<div class="hstack flex-wrap gap-2 mb-4">
+							<div class="badge border heading-color bg-light">ثبت سفارش</div>
+							<div class="badge border heading-color bg-light">بیشتر بدانید&nbsp;&nbsp;</div>
+			  </div>
+						<!-- Button -->
+			  <a href="portfolio-case-studies-v2.html" class="heading-color mb-0">&nbsp;</a>
+			</div>
+				</div>
+			</div>
+		</div>
+		<!-- Button -->
+		<div class="text-center pt-6">
+			<a href="portfolio-grid.html" class="btn btn-lg btn-dark mb-0">ارتباط با واحد فروش&nbsp; 081-34945580- 0918&nbsp;</a>
+		</div>
+	</div>
+
+	<!-- CTA -->
+	<div class="bg-primary d-sm-flex align-items-center justify-content-center gap-2 mt-6 mt-sm-8 p-4">
+		<ul class="avatar-group mb-3 mb-ms-0">
+			<li class="avatar avatar-sm">
+				<img class="avatar-img rounded-circle" src="assets/images/toys nut/03.jpg" alt="avatar">
+		  </li>
+			<li class="avatar avatar-sm">
+				<img class="avatar-img rounded-circle" src="assets/images/toys nut/2.jpg" alt="avatar">
+			</li>
+			<li class="avatar avatar-sm">
+				<div class="avatar-img rounded-circle text-bg-dark">
+					<i class="bi bi-telephone text-white position-absolute top-50 start-50 translate-middle"></i>
+				</div>
+			</li>
+		</ul>
+		<p class="fw-normal text-white mb-0">نماینده های فروش&nbsp; &nbsp; <a href="#" class="text-decoration-underline text-white fw-semibold">تماس با واحد فروش&nbsp;</a></p>
+	</div>
+</section>
+<!-- =======================
+Case studies END -->
+
+<!-- =======================
+Approach START -->
+<section class="pb-0">
+	<div class="container">
+		<!-- Title -->
+		<div class="row g-4 g-md-5">
+
+			<div class="col-md-6 col-lg-4">
+				<h2 class="mb-0">دیگر محصولات</h2>
+			</div>
+
+			<!-- Item -->
+			<div class="col-md-6 col-lg-4">
+				<div class="card card-body border p-4 h-100">
+				  <h6 class="text-primary mb-4">01.</h6>
+				  <h5>روغن گرو</h5>
+					<p class="mb-0">روغن خالص و طبیعی گردو با کیفیت ممتاز، مناسب صنایع غذایی، آرایشی و بهداشتی و قابل عرضه در بسته‌بندی‌های مختلف.</p>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="col-md-6 col-lg-4">
+				<div class="card card-body border p-4 h-100">
+				  <h6 class="text-primary mb-4">02.</h6>
+					<h5>آرد مغز گردو</h5>
+					<p class="mb-0">آرد تهیه‌شده از مغز گردوی مرغوب، سرشار از مواد مغذی و مناسب تولید انواع نان، شیرینی، کیک و محصولات غذایی سالم. </p>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="col-md-6 col-lg-4">
+				<div class="card card-body border p-4 h-100">
+					<h6 class="text-primary mb-4">03.</h6>
+					<h5>خلال و مغز خردشده گردو</h5>
+					<p class="mb-0">تهیه‌شده از گردوی باکیفیت، مناسب استفاده در شیرینی‌پزی، شکلات، بستنی، رستوران‌ها و صنایع غذایی.</p>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="col-md-6 col-lg-4">
+				<div class="card card-body border p-4 h-100">
+					<h6 class="text-primary mb-4">04.</h6>
+					<h5>برگ گردو خشک</h5>
+					<p class="mb-0">برگ گردوی فرآوری‌شده با کیفیت بالا، مناسب استفاده در صنایع گیاهان دارویی، تولید عصاره و فرآورده‌های طبیعی</p>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="col-md-6 col-lg-4">
+				<div class="card card-body border p-4 h-100">
+					<h6 class="text-primary mb-4">05.</h6>
+					<h5>پوسته سبز گردو خشک</h5>
+					<p class="mb-0">وسته سبز گردوی خشک و فرآوری‌شده، مناسب تولید عصاره، رنگدانه‌های طبیعی، محصولات آرایشی و کاربردهای صنعتی.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Approach END -->
+
+<!-- =======================
+Team START -->
+<section class="pb-0">
+	<div class="container">
+		<div class="inner-container">
+			<!-- Title -->
+			<h2 class="text-center mb-4 mb-sm-5">دیگر محصولات&nbsp;</h2>
+
+			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-0 justify-content-center">
+				<!-- Team item -->
+				<div class="col">
+					<div class="card card-body bg-transparent text-center p-4">
+						<!-- Image -->
+						<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+							<img class="avatar-img rounded-circle" src="assets/images/toys nut/004.jpg" alt="avatar">
+						</div>
+
+						<!-- Content -->
+						<h6 class="mb-1"><a href="#">آرد&nbsp; گردو</a></h6>
+						<small>ثبت سفارش</small>
+
+						<!-- Social button -->
+						<ul class="list-inline mb-0 mt-3">
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> </li>
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-instagram lh-base"></i></a> </li>
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-twitter lh-base"></i></a> </li>
+						</ul>
+					</div>
+			  </div>
+
+				<!-- Team item -->
+				<div class="col">
+					<div class="card card-body bg-transparent text-center p-4">
+						<!-- Image -->
+						<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+							<img class="avatar-img rounded-circle" src="assets/images/toys nut/001.jpg" alt="avatar">
+						</div>
+
+						<!-- Content -->
+						<h6 class="mb-1"><a href="#">برگ گردو خشک</a></h6>
+						<small>ثبت سفارش</small>
+
+						<!-- Social button -->
+						<ul class="list-inline mb-0 mt-3">
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> </li>
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-instagram lh-base"></i></a> </li>
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-twitter lh-base"></i></a> </li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Team item -->
+				<div class="col">
+					<div class="card card-body bg-transparent text-center p-4">
+						<!-- Image -->
+						<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+						  <img class="avatar-img rounded-circle" src="assets/images/toys nut/003.jpg" alt="avatar">
+						</div>
+
+						<!-- Content -->
+						<h6 class="mb-1"><a href="#">پودر سبز گردو&nbsp;</a></h6>
+						<small>ثبت سفارش</small>
+
+						<!-- Social button -->
+						<ul class="list-inline mb-0 mt-3">
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> </li>
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-instagram lh-base"></i></a> </li>
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-twitter lh-base"></i></a> </li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Team item -->
+				<div class="col">
+					<div class="card card-body bg-transparent text-center p-4">
+						<!-- Image -->
+						<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+							<img class="avatar-img rounded-circle" src="assets/images/toys nut/002.jpg" alt="avatar">
+						</div>
+
+						<!-- Content -->
+						<h6 class="mb-1"><a href="#">روغن گردو</a></h6>
+						<small>ثبت سفارش</small>
+
+						<!-- Social button -->
+						<ul class="list-inline mb-0 mt-3">
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> </li>
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-instagram lh-base"></i></a> </li>
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-twitter lh-base"></i></a> </li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Team item -->
+				<div class="col">
+					<div class="card card-body bg-transparent text-center p-4">
+						<!-- Image -->
+						<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+							<img class="avatar-img rounded-circle" src="assets/images/toys nut/005.jpg" alt="avatar">
+						</div>
+
+						<!-- Content -->
+						<h6 class="mb-1"><a href="#">گردو با پوست</a></h6>
+						<small>CEO &amp; Founder</small>
+
+						<!-- Social button -->
+						<ul class="list-inline mb-0 mt-3">
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> </li>
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-instagram lh-base"></i></a> </li>
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-twitter lh-base"></i></a> </li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Team item -->
+				<div class="col">
+					<div class="card card-body bg-transparent text-center p-4">
+						<!-- Image -->
+						<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+							<img class="avatar-img rounded-circle" src="assets/images/toys nut/006.jpg" alt="avatar">
+						</div>
+
+						<!-- Content -->
+						<h6 class="mb-1"><a href="#">کر ه گردو</a></h6>
+						<small>ثبت سفارش</small>
+
+						<!-- Social button -->
+						<ul class="list-inline mb-0 mt-3">
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> </li>
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-instagram lh-base"></i></a> </li>
+							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-twitter lh-base"></i></a> </li>
+						</ul>
+					</div>
+				</div>
+		  </div>
+	  </div>
+	</div>
+</section>
+<!-- =======================
+Team END -->
+
+<!-- =======================
+CTA START -->
+<section>
+	<div class="container">
+		<div class="inner-container-small text-center">
+			<!-- SVG -->
+			<figure class="mb-4">
+				<svg width="223.6px" height="87.2px" viewBox="0 0 223.6 87.2" style="enable-background:new 0 0 223.6 87.2;" xml:space="preserve">
+					<path class="fill-mode" d="M222.9,53.8c-13.2-3-28-3-41,0.9c-5.5,1.7-11,4.3-14.9,8.7c-1.3-0.1-2.6-0.2-3.8-0.1 c-5.8,0.1-11.6,1.5-16.9,3.7c-2.9,1.2-5.7,2.9-8.5,4.4c-3.7,1.9-7.4,3.8-11.3,5.3c-7.3,2.9-16,5-23.5,1.7c-1.5-0.6-2.9-1.5-4.1-2.6 c6.5-2.6,12.2-7.9,13.2-15c0.8-6.6-5.1-12.1-11.6-11.4c-5,0.6-7.5,5.6-8.3,10.1c-0.9,4.9-0.3,10.8,2.7,14.9 c0.2,0.2,0.4,0.5,0.5,0.7c-0.4,0.1-0.8,0.2-1.3,0.3c-6.6,1.5-14.3,0.3-20.3-2.9c-6.1-3.3-10.3-9.1-12.3-15.6 c-0.2-0.7-1.2-0.4-1,0.3c2.1,7.3,6.7,13.4,13.4,17.1c6.8,3.7,15.4,4.5,22.7,2.4c0,0,0.1,0,0.1,0c4.5,4.4,11.2,5.9,17.3,5.4 c8-0.6,15.6-4.1,22.7-7.7c5.6-2.9,10.8-6,17-7.6c3.8-0.9,7.8-1.5,11.8-1.3c-3.3,4.8-4.6,11.1-2.3,16.5c2.8,6.4,11.3,6.7,16.3,2.8 c5.1-4,2.8-12.4-1-16.4c-2.4-2.5-5.7-3.9-9.1-4.5c0.2-0.2,0.3-0.3,0.5-0.4c4.3-4,10.2-6.2,15.9-7.5c11.8-2.8,24.9-2.7,36.7,0 C223.6,56,224.1,54,222.9,53.8z M95.5,71.6c-1.2-2.4-1.7-5.1-1.8-7.8c-0.1-4.5,1.1-11.2,6.1-12.6c2.4-0.7,5.2,0.4,7.2,1.7 c2.9,1.9,3.5,5.5,2.9,8.7c-1.2,6.2-6.8,10.5-12.6,12.6C96.7,73.4,96,72.5,95.5,71.6z M171.5,66.3c5.7,1.8,10.3,7.8,8.5,14 c-1.1,3.9-6.1,5.2-9.6,4.8c-3.5-0.4-5.5-3.4-6.2-6.5c-1.1-4.7,0.6-9.5,3.5-13.1C169,65.7,170.2,65.9,171.5,66.3z"></path>
+					<polygon class="fill-primary" points="65.3,39 61,56.8 0.7,0.7"></polygon>
+					<path class="fill-mode" d="M60.6,57.3L0.2,1.1C0,0.9-0.1,0.5,0.1,0.3C0.3,0,0.7-0.1,1,0.1l64.7,38.3c0.2,0.1,0.4,0.4,0.3,0.7l-4.3,17.8 c-0.1,0.2-0.2,0.4-0.4,0.5c-0.1,0-0.1,0-0.2,0C60.9,57.4,60.7,57.4,60.6,57.3z M5.6,4.3l55.1,51.2l3.9-16.3L5.6,4.3z"></path>
+					<polygon class="fill-primary" points="56.5,42.4 61,56.8 0.7,0.8"></polygon>
+					<path class="fill-mode" d="M60.6,57.3L0.2,1.3C0,1.1-0.1,0.7,0.2,0.4c0.2-0.3,0.6-0.3,0.9-0.1l55.8,41.5c0.1,0.1,0.2,0.2,0.2,0.3 l4.6,14.4c0.1,0.3,0,0.6-0.3,0.8c-0.1,0.1-0.2,0.1-0.4,0.1C60.9,57.4,60.7,57.4,60.6,57.3z M10.1,8.7l49.6,45.9l-3.8-11.8 L10.1,8.7z"></path>
+					<polygon class="fill-primary" points="0.7,0.7 91.5,28.5 65.2,38.8 			"></polygon>
+					<path class="fill-mode" d="M64.9,39.4L0.3,1.2C0,1.1-0.1,0.7,0.1,0.4C0.2,0.1,0.5-0.1,0.9,0l90.9,27.8c0.3,0.1,0.5,0.3,0.5,0.6 c0,0.3-0.2,0.5-0.4,0.6L65.4,39.4c-0.1,0-0.2,0-0.2,0C65.1,39.4,65,39.4,64.9,39.4z M5.8,2.9l59.5,35.2l24.3-9.5L5.8,2.9z"></path>
+					<polygon class="fill-primary" points="56.3,42.4 26.5,57.6 0.7,0.7 			"></polygon>
+					<path class="fill-mode" d="M26.3,58.3c-0.2-0.1-0.3-0.2-0.4-0.3L0.1,0.9c-0.1-0.3,0-0.6,0.2-0.8C0.5,0,0.8,0,1.1,0.1l55.7,41.8 c0.2,0.1,0.3,0.4,0.3,0.6c0,0.2-0.2,0.4-0.4,0.5L26.8,58.2c-0.1,0-0.2,0.1-0.3,0.1C26.5,58.3,26.4,58.3,26.3,58.3z M2.3,2.7 l24.5,54l28.2-14.4L2.3,2.7z"></path>
+				</svg>
+			</figure>
+
+			<!-- Title -->
+			<h2>درباره&nbsp; شرکت</h2>
+			<p>کارگستران تویس شرکت کارگستران تویس با شماره ثبت ۱۱۲۸، با هدف توسعه فرآوری و ایجاد ارزش افزوده برای گردوی تویسرکان فعالیت می‌کند. تویسرکان به‌عنوان خاستگاه یکی از مرغوب‌ترین گردوهای ایران و دارنده نشان ملی گردوی تویسرکان شناخته می‌شود. این شرکت با بهره‌گیری از فناوری‌های نوین، در زمینه تولید و عرضه محصولات باکیفیت، توسعه بازارهای داخلی و صادرات، آماده ارائه خدمات و همکاری با تولیدکنندگان، صنایع غذایی، بازرگانان و فعالان حوزه صادرات است.</p>
+
+			<div class="position-relative mt-5">
+				<!-- SVG decoration -->
+				<figure class="position-absolute top-100 start-100 translate-middle d-none d-lg-block">
+					<svg class="opacity-1" width="148" height="140" viewBox="0 0 148 140" xmlns="http://www.w3.org/2000/svg">
+						<path class="fill-primary" d="m9.95 131.41c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<circle class="fill-primary" cx="25.86" cy="131.41" r="2.95"></circle>
+						<circle class="fill-primary" cx="44.71" cy="131.41" r="2.95"></circle>
+						<circle class="fill-primary" cx="63.57" cy="131.41" r="2.95"></circle>
+						<circle class="fill-primary" cx="82.43" cy="131.41" r="2.95"></circle>
+						<circle class="fill-primary" cx="101.29" cy="131.41" r="2.95"></circle>
+						<circle class="fill-primary" cx="120.14" cy="131.41" r="2.95"></circle>
+						<path class="fill-primary" d="m141.95 131.41c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m9.95 113.61c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<circle class="fill-primary" cx="25.86" cy="113.61" r="2.95"></circle>
+						<circle class="fill-primary" cx="44.71" cy="113.61" r="2.95"></circle>
+						<circle class="fill-primary" cx="63.57" cy="113.61" r="2.95"></circle>
+						<circle class="fill-primary" cx="82.43" cy="113.61" r="2.95"></circle>
+						<circle class="fill-primary" cx="101.29" cy="113.61" r="2.95"></circle>
+						<circle class="fill-primary" cx="120.14" cy="113.61" r="2.95"></circle>
+						<path class="fill-primary" d="m141.95 113.61c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m9.95 95.81c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<circle class="fill-primary" cx="25.86" cy="95.81" r="2.95"></circle>
+						<circle class="fill-primary" cx="44.71" cy="95.81" r="2.95"></circle>
+						<circle class="fill-primary" cx="63.57" cy="95.81" r="2.95"></circle>
+						<circle class="fill-primary" cx="82.43" cy="95.81" r="2.95"></circle>
+						<circle class="fill-primary" cx="101.29" cy="95.81" r="2.95"></circle>
+						<circle class="fill-primary" cx="120.14" cy="95.81" r="2.95"></circle>
+						<path class="fill-primary" d="m141.95 95.81c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m9.95 78.01c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.63 0.01 2.95 1.33 2.95 2.95z"></path>
+						<path class="fill-primary" d="m28.8 78.01c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.63 0.01 2.95 1.33 2.95 2.95z"></path>
+						<path class="fill-primary" d="m47.66 78.01c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.63 0.01 2.95 1.33 2.95 2.95z"></path>
+						<path class="fill-primary" d="m66.52 78.01c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.63 0.01 2.95 1.33 2.95 2.95z"></path>
+						<path class="fill-primary" d="m85.37 78.01c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.64 0.01 2.95 1.33 2.95 2.95z"></path>
+						<path class="fill-primary" d="m104.23 78.01c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.63 0.01 2.95 1.33 2.95 2.95z"></path>
+						<path class="fill-primary" d="m123.09 78.01c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.63 0.01 2.95 1.33 2.95 2.95z"></path>
+						<path class="fill-primary" d="m141.95 78.01c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.63 0.01 2.95 1.33 2.95 2.95z"></path>
+						<path class="fill-primary" d="m9.95 60.22c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m28.8 60.22c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m47.66 60.22c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m66.52 60.22c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m85.37 60.22c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.64 0 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m104.23 60.22c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m123.09 60.22c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m141.95 60.22c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m9.95 42.42c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m28.8 42.42c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m47.66 42.42c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m66.52 42.42c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m85.37 42.42c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.64 0 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m104.23 42.42c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m123.09 42.42c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m141.95 42.42c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m9.95 24.62c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<circle class="fill-primary" cx="25.86" cy="24.62" r="2.95"></circle>
+						<circle class="fill-primary" cx="44.71" cy="24.62" r="2.95"></circle>
+						<circle class="fill-primary" cx="63.57" cy="24.62" r="2.95"></circle>
+						<circle class="fill-primary" cx="82.43" cy="24.62" r="2.95"></circle>
+						<circle class="fill-primary" cx="101.29" cy="24.62" r="2.95"></circle>
+						<circle class="fill-primary" cx="120.14" cy="24.62" r="2.95"></circle>
+						<path class="fill-primary" d="m141.95 24.62c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95 2.95 1.32 2.95 2.95z"></path>
+						<path class="fill-primary" d="m9.95 6.82c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95c0-1.62 1.32-2.94 2.95-2.94s2.95 1.32 2.95 2.94z"></path>
+						<circle class="fill-primary" cx="25.86" cy="6.82" r="2.95"></circle>
+						<circle class="fill-primary" cx="44.71" cy="6.82" r="2.95"></circle>
+						<circle class="fill-primary" cx="63.57" cy="6.82" r="2.95"></circle>
+						<circle class="fill-primary" cx="82.43" cy="6.82" r="2.95"></circle>
+						<circle class="fill-primary" cx="101.29" cy="6.82" r="2.95"></circle>
+						<circle class="fill-primary" cx="120.14" cy="6.82" r="2.95"></circle>
+						<path class="fill-primary" d="m141.95 6.82c0 1.63-1.32 2.95-2.95 2.95s-2.95-1.32-2.95-2.95 1.32-2.95 2.95-2.95c1.63 0.01 2.95 1.33 2.95 2.95z"></path>
+					</svg>
+				</figure>
+
+				<!-- Input -->
+				<div class="bg-light border rounded-2 position-relative z-index-2 p-2 mb-2">
+					<form class="input-group">
+						<input class="form-control form-control-lg focus-shadow-none bg-light border-0 me-1" type="email" placeholder="Enter your email address">
+						<button type="button" class="btn btn-lg btn-dark rounded-2 mb-0">ایمیل&nbsp;</button>
+					</form>
+				</div>
+			</div>
+			<p class="small mb-0 px-4">«تعهد به کیفیت، جلب رضایت مشتری و خلق اعتماد پایدار؛ رسالت همیشگی کارگستران توی می باشد.</p>
+		</div>
+	</div>
+</section>
+<!-- =======================
+CTA END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- =======================
+Footer START -->
+<footer class="bg-dark pt-6 position-relative" data-bs-theme="dark">
+	<div class="container position-relative mt-5">
+		<!-- Widgets -->
+		<div class="row g-4 justify-content-between">
+			<!-- Widget 1 START -->
+			<div class="col-lg-5">
+				<!-- logo -->
+				<a href="index.html">
+					<img class="light-mode-item h-40px" src="assets/images/logo.svg" alt="logo">
+					<img class="dark-mode-item h-40px" src="assets/images/toys nut/010.jpg" alt="logo">
+				</a>
+
+				<p class="mt-4 mb-2">رضایت مشتری ، مسیر همیشگی موفقیت است.</p>
+				<!-- Social icon -->
+				<ul class="list-inline mb-0 mt-4">
+					<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> </li>
+					<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-instagram lh-base"></i></a> </li>
+					<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-twitter lh-base"></i></a> </li>
+					<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-linkedin-in lh-base"></i></a> </li>
+					<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-youtube lh-base"></i></a> </li>
+				</ul>
+			</div>
+			<!-- Widget 1 END -->
+
+			<!-- Widget 2 START -->
+			<div class="col-lg-6 col-xxl-4">
+				<div class="row g-4">
+					<!-- Link block -->
+					<div class="col-6">
+						<ul class="nav flex-column">
+							<li class="nav-item"><a class="nav-link pt-0" href="about-v1.html">درباره&nbsp;</a></li>
+							<li class="nav-item"><a class="nav-link" href="contact-v1.html">ارتباط با ما</a></li>
+							<li class="nav-item"></li>
+							<li class="nav-item"></li>
+							<li class="nav-item"><a class="nav-link" href="contact-v1.html">نایندگان فروش</a></li>
+							<li class="nav-item"><a class="nav-link" href="sign-in.html">ورود به کاربری&nbsp;</a></li>
+							<li class="nav-item"><a class="nav-link" href="sign-up.html">عضویت&nbsp;&nbsp;</a></li>
+						</ul>
+					</div>
+
+					<!-- Link block -->
+					<div class="col-6">
+						<ul class="nav flex-column">
+							<li class="nav-item"></li>
+							<li class="nav-item"><a class="nav-link" href="#">پشتبانی&nbsp;&nbsp; <i class="bi bi-box-arrow-up-right small ms-1"></i></a></li>
+							<li class="nav-item"><a class="nav-link" href="faq.html">واحد فروش&nbsp;</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">واحد تامین&nbsp;</a></li>
+							<li class="nav-item"><a class="nav-link" href="blog-grid.html">ووووووووووووووووو</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">درباره تویسرکان&nbsp;&nbsp;</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- Widget 2 END -->
+		</div>
+
+		<!-- Divider -->
+		<hr class="mt-4 mb-0">
+
+		<!-- Bottom footer -->
+		<div class="d-md-flex justify-content-between align-items-center text-center text-lg-start py-4">
+			<!-- copyright text -->
+			<div class="text-body"> تمامی حقوق این وب سایت متعلق به شرکت کارگستران توی (شماره ثبت 1128) است. </div>
+			<!-- copyright links-->
+			<div class="nav mt-2 mt-lg-0">
+				<ul class="list-inline mx-auto mb-0">
+					<li class="list-inline-item me-0"><a class="nav-link py-0" href="#">..........&nbsp;</a></li>
+					<li class="list-inline-item me-0"><a class="nav-link py-0 pe-0" href="#">ارتباط با مدیریت&nbsp;</a></li>
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+</footer>
+<!-- =======================
+Footer END -->
+
+<!-- Back to top -->
+<div class="back-top"></div>
+
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--Vendors-->
+<script src="assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.js"></script>
+<script src="assets/vendor/isotope/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/imagesLoaded/imagesloaded.pkgd.min.js"></script>
+
+<!-- Theme Functions -->
+<script src="assets/js/functions.js"></script>
+
+</body>
+</html>
